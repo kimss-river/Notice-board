@@ -14,7 +14,7 @@
 <style>
 	.slide{
 		position: relative;
-		top: 4px;
+		top: 19px;
 	}
 </style>
 <body>
@@ -26,13 +26,13 @@ $('.carousel').carousel({ interval: 2000 })
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img class="d-block w-100" src="images/t01.jpg" height="600px" alt="First slide">
+	      <img class="d-block w-100" src="images/a.jpg" height="600px" alt="First slide">
 	    </div>
 	    <div class="carousel-item">
-	      <img class="d-block w-100" src="images/t02.jpg" height="600px" alt="Second slide">
+	      <img class="d-block w-100" src="images/b.jpg" height="600px" alt="Second slide">
 	    </div>
 	    <div class="carousel-item">
-	      <img class="d-block w-100" src="images/t03.jpg" height="600px" alt="Third slide">
+	      <img class="d-block w-100" src="images/c.jpg" height="600px" alt="Third slide">
 	    </div>
 	  </div>
 	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

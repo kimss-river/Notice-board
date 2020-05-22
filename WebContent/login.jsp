@@ -49,6 +49,7 @@ else if (id!=null){
 %>   
 <div class="container" >
 	<form class="form-horizontal" name="login" action="loginPro.do" method="post" >
+   <a href="main.jsp"><img src="images/tt1.png" width="180" height="180" align="center"></a>
 	<br>
 	<div class="test">
 		<label for="id" class=mb-2 mr-sm-2">아이디 </label>

@@ -1,4 +1,4 @@
 <%
-   String bodyback_c="#d7dddb";
+   String bodyback_c="#000000";
    String value_c="#a1e8e4";
 %>

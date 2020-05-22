@@ -45,7 +45,7 @@
 <head>
 <title>게시판</title>
 <!--  뷰포트 크기 조절 -->
- <meta name="viewport" content="width=device-width, user-scalable=no">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -58,8 +58,14 @@
 	left: 76%;
 }
 </style>
-<body bgcolor="<%=bodyback_c%>">
+<%-- <body bgcolor="<%=bodyback_c%>"> --%>
+<body>
+<!-- 점보트론 추후수정 -->
+<!--  <div class="development container">
+  <div class="jumbotron mt-5">
+   <h1 class="display-3">Sofware Development</h1> -->
 	<%@include file="nav.jsp" %>
+<br>
 <br>
 <p align="center">글목록(전체 글:<%=count%>)</p>
 
@@ -77,9 +83,10 @@
 <% } else {%>
 <table class="table table-hover" style="margin-left:auto; margin-right:auto;">
 	<thead>
-    <tr height="30" bgcolor="<%=value_c%>"> 
-      <th align="center"  width="50"  >번 호</th> 
-      <th align="center"  width="250" >제   목</th> 
+<%--     <tr height="30" bgcolor="<%=value_c%>">  --%>
+    <tr height="30">
+      <th align="center"  width="50"  >번 호</th>
+      <th align="center"  width="250" >제   목</th>
       <th align="center"  width="100" >작성자</th>
       <th align="center"  width="150" >작성일</th> 
       <th align="center"  width="50" >조 회</th> 

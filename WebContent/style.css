@@ -1,14 +1,24 @@
 @CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+ 
 
 body {
 	font-size: 12pt; 
 	text-align: center;
+	font-family: "Nanum Gothic", sans-serif;
+/* 	background-image: url("images/t04.jpg");
+	background-repeat : no-repeat;
+	background-size : cover; */
+/* 	background-color: #000000; */
 }
 
 table {
 	font-size: 10pt;
 	text-align: center;
 }
+
+/* .table td{ border-bottom: 1px solid #000000; } */ /* 테이블 보더 설정 */
+
 
 select {
 	font-size: 12pt; 
@@ -26,3 +36,10 @@ p{
 div{
 	text-align: center;
 }
+
+/* .jumbotron{
+	background-image: url("images/t04.png");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+} */

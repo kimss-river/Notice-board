@@ -18,14 +18,28 @@
     background-color:transparent;
 }
 .navbar {
-	background-color: #a1e8e4; opacity: 0.5;
-	
+	background-color: #ffffff; /* opacity: 0.5; */
+	height: 120px;
 	}
 .navbar-nav > li > a { padding: 24px 25px }
 
+.mIcon {
+	position: absolute;
+	top: 10px;
+	left: 60px;
+}
+
+.navleft {
+	position: absolute;
+	top: 30px;
+	left: 180px;
+}
+
 .login {
-position: absolute;
-left: 1820px;
+	position: absolute;
+	top: 30px;
+	left: 1780px;
+	color: #313582;
 
 }
 </style>
@@ -38,12 +52,17 @@ left: 1820px;
 <body style="height:1500px">
 <div class="navbar-inner">
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-  <a class="navbar-brand" style="color:black" href="main.jsp">여기다가뭘할까 일단은 메인으로 갑니다</a>
+<!--   <a class="navbar-brand" style="color:black" href="main.jsp">여기다가뭘할까 일단은 메인으로 갑니다</a> -->
+ <div class="mIcon">
+   <a href="main.jsp"><img src="images/tt1.png" width="100" height="100"></a>
+ </div>
+  <div class="navleft">
   <ul class="navbar-nav">
     <li class="nav-item">
     	<a class="nav-link" style="color:black" href="list.jsp">게시판</a>
     </li>
   </ul>
+  </div>
   <%
   	if(id==null){
   %>
