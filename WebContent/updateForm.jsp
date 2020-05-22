@@ -26,7 +26,7 @@
 <p>글수정</p>
 <br>
 <form method="post" name="writeform" 
-action="updatePro.jsp?pageNum=<%=pageNum%>" onsubmit="return writeSave()" enctype="multipart/form-data">
+action="updatePro.jsp?pageNum=<%=pageNum%>" onsubmit="return writeSave(this)" enctype="multipart/form-data">
 <table style="margin-left:auto; margin-right:auto;">
   <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center">이 름</td>

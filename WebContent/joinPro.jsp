@@ -16,9 +16,7 @@
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("passwd");
 	String datenum = request.getParameter("date_number");
-	String email = request.getParameter("email");
-	String adress = request.getParameter("address");
-	String tel = request.getParameter("tel");
+	String tel = request.getParameter("telnum");
 	String name = request.getParameter("name");
 	String reg_date = request.getParameter("reg_date");
 	Timestamp time = new Timestamp(System.currentTimeMillis());
@@ -33,12 +31,14 @@
 		
 		Class.forName(jdbc_driver);
 		conn = DriverManager.getConnection(db_url, "scott", "tiger");
-		String sql = "insert into member (id, passwd, name, ";
-		sql += "reg_date) values (?, ?, ?, CURRENT_TIMESTAMP)";
+		String sql = "insert into member (id, passwd, date_number, name, tel, ";
+		sql += "reg_date) values (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		pstmt.setString(2, pwd);
-		pstmt.setString(3, name);
+		pstmt.setString(3, datenum);
+		pstmt.setString(4, name);
+		pstmt.setString(5, tel);
 		
 		int result = pstmt.executeUpdate();
 		

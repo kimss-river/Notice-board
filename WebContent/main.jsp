@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Main</title>
 </head>
 <body>
-
+	<%@include file="nav.jsp" %>
+	<%@include file="header.jsp" %>
+	<%@include file="footer.jsp" %>
 </body>
 </html>

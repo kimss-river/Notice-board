@@ -43,29 +43,27 @@
 %>
 <html>
 <head>
-<link href="style.css?after" rel="stylesheet" type="text/css">
 <title>게시판</title>
- <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <!--  뷰포트 크기 조절 -->
  <meta name="viewport" content="width=device-width, user-scalable=no">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ <link href="style.css?after" rel="stylesheet" type="text/css">
 </head>
+<style>
+.writebtn{
+	position: absolute;
+	left: 76%;
+}
+</style>
 <body bgcolor="<%=bodyback_c%>">
+	<%@include file="nav.jsp" %>
 <br>
 <p align="center">글목록(전체 글:<%=count%>)</p>
 
 <div class="container">
-<table>
-  <tr>
-  <table style="margin-left:0px;">
-    <td align="right">
-       <b><a href="writeForm.jsp">글쓰기</a></b>
-    </td>
-  </tr>
-</table>
 
 <% if (count == 0) { %>
 
@@ -117,6 +115,10 @@
   </tr>
 <%}%>
 </table>
+	<div class=writebtn>
+		<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="글쓰기"
+							OnClick="window.location='writeForm.jsp'">
+	</div>
 </div>
 <%}%>
 

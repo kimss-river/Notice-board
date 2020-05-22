@@ -1,24 +1,28 @@
 @CHARSET "UTF-8";
 
 body {
-	font-size: 9pt; 
+	font-size: 12pt; 
 	text-align: center;
 }
 
 table {
-	font-size: 9pt;
+	font-size: 10pt;
 	text-align: center;
 }
 
 select {
-	font-size: 9pt; 
+	font-size: 12pt; 
 }
 
 form {
-	font-size: 9pt; 
+	font-size: 12pt; 
 }
 
 p{
-	font-weight: 700;
+	font-weight: 300;
+	text-align: center;
+}
+
+div{
 	text-align: center;
 }

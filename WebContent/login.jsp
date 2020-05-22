@@ -3,19 +3,6 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
-<style>
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 940px;
-  }
-}
-</style>
 <head>
 <meta charset="UTF-8">
 <title>LOGIN FORM</title>
@@ -25,67 +12,61 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+.test{
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.col-lg-10 {
+	width: 400px;
+}
+</style>
 <body>
 <%
 String id = (String)session.getAttribute("id");
 if(request.getAttribute("checkId") !=null){
 	
 int checkId = (int)request.getAttribute("checkId");
-if(checkId == -1){
-	%>
-	<script>
-	alert("해당 아이디를 찾을 수 없습니다.");
-	</script>
-	<% 
-}
-else if (checkId == 1) {
+
+if (checkId == 1) {
 	%>
 		<script>
-	alert("아이디와 패스워드가 일치하지 않습니다. 돌아가세요.");
+	alert('아이디 또는 패스워드가 일치하지 않습니다.');
 	</script>
 	<%
 }
 else if (id!=null){
 	%>
 	<script>
-	alert("반갑습니다. list 화면으로 이동합니다.");
-	location.href = "list.jsp";
+	alert('<%=id%>' + "님 안녕하세요!");
+	location.href='index.jsp';
 	</script>
 	<%
 }
 }
 %>   
 <div class="container" >
-	<form name="login" action="loginPro.do" method="post" >
-<!-- 		<table border=1 style="margin-left:auto; margin-right:auto;">
-			<tr>
-				<td colspan="2" align="center"><b><font size=5>LOGIN</font></b></td>
-			</tr>
-			<tr align="center">
-				<td>ID :</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr align="center">
-				<td>PASSWORD :</td>
-				<td><input type="password" name="passwd"></td>
-			</tr>
-			<tr>
-				<td colspan="2"  align="center">
-					<input type="submit" value="login">
-					<input type="button" onclick="location.href='joinForm.jsp'" value="sign up">
-				</td>
-			</tr>
-		</table> -->
-		<label for="id" class=mb-2 mr-sm-2">아이디 :</label>
-		 <input type="text" class="form-control" id="id" placeholder="Enter id" name="id">
-		<label for="pwd" class=mb-2 mr-sm-2">비밀번호 :</label>
-		<input type="text" class="form-control" id="passwd" placeholder="Enter password" name="passwd">
+	<form class="form-horizontal" name="login" action="loginPro.do" method="post" >
+	<br>
+	<div class="test">
+		<label for="id" class=mb-2 mr-sm-2">아이디 </label>
+		<div class="col-lg-10">
+		 <input type="text" class="form-control" id="id" placeholder="아이디" name="id">
+		 </div>
+		<label for="pwd" class=mb-2 mr-sm-2">비밀번호 </label>
+		<div class="col-lg-10">
+		<input type="text" class="form-control" id="passwd" placeholder="패스워드" name="passwd">
+		</div>
 		<div class="form-check mb-2 mr-sm-2">
 		<label class="form-check-label">
         <input type="checkbox" class="form-check-input" name="remember"> 아이디 저장
       </label>
       </div>
       <button type="submit" class="btn btn-primary mb-2">로그인</button>
+	<a href="joinForm.jsp" class="btn btn-primary mb-2">회원가입</a>
+	</div>
 	</form>
 	</div>
 </body>

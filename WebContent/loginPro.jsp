@@ -14,25 +14,19 @@
 <%
 String id = (String)session.getAttribute("id");
 int checkId = (int)request.getAttribute("checkId");
-if(checkId == -1){
-	%>
-	<script>
-	alert("해당 아이디를 찾을 수 없습니다.");
-	</script>
-	<% 
-}
-else if (checkId == 1) {
+
+if (checkId == 1) {
 	%>
 		<script>
-	alert("아이디와 패스워드가 일치하지 않습니다. 돌아가세요.");
+	alert('아이디 또는 패스워드가 일치하지 않습니다.');
 	</script>
 	<%
 }
 else if (id!=null){
 	%>
 	<script>
-	alert("반갑습니다. lsit 화면으로 이동합니다.");
-	location.href = "list.jsp";
+	alert('<%=id%>' + "님 안녕하세요!");
+	location.href='index.jsp';
 	</script>
 	<%
 }
