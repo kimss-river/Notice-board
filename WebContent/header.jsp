@@ -32,7 +32,7 @@ $('.carousel').carousel({ interval: 2000 })
 	      <img class="d-block w-100" src="images/b.jpg" height="600px" alt="Second slide">
 	    </div>
 	    <div class="carousel-item">
-	      <img class="d-block w-100" src="images/c.jpg" height="600px" alt="Third slide">
+	      <img class="d-block w-100" src="images/d.jpg" height="600px" alt="Third slide">
 	    </div>
 	  </div>
 	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

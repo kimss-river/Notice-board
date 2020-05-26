@@ -23,57 +23,55 @@
 
 %>
 
-<p>글수정</p>
-<br>
-<form method="post" name="writeform" 
-action="updatePro.jsp?pageNum=<%=pageNum%>" onsubmit="return writeSave(this)" enctype="multipart/form-data">
-<table style="margin-left:auto; margin-right:auto;">
-  <tr>
-    <td  width="70"  bgcolor="<%=value_c%>" align="center">이 름</td>
-    <td align="left" width="330">
-       <input type="text" size="10" maxlength="10" name="writer" 
-         value="<%=article.getWriter()%>" style="ime-mode:active;">
-	   <input type="hidden" name="num" value="<%=article.getNum()%>"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="<%=value_c%>" align="center" >제 목</td>
-    <td align="left" width="330">
-       <input type="text" size="40" maxlength="50" name="subject"
-        value="<%=article.getSubject()%>" style="ime-mode:active;"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="<%=value_c%>" align="center">Email</td>
-    <td align="left" width="330">
-       <input type="text" size="40" maxlength="30" name="email" 
-        value="<%=article.getEmail()%>" style="ime-mode:inactive;"></td>
-  </tr>
-  <tr>
-    <td  width="70"  bgcolor="<%=value_c%>" align="center" >내 용</td>
-    <td align="left" width="330">
-     <textarea name="content" rows="13" cols="40" 
-       style="ime-mode:active;"><%=article.getContent()%></textarea></td>
-  </tr>
-<tr>
-	<td width="70" bgcolor="<%=value_c%>" align="center">파일업데이트</td>
-	<td width="330" align="left"><input type="file" name="selectfile"></td>
-</tr>
-  <tr>
-    <td  width="70"  bgcolor="<%=value_c%>" align="center" >비밀번호</td>
-    <td align="left" width="330" >
-     <input type="password" size="8" maxlength="12" 
-               name="passwd" style="ime-mode:inactive;">
-     
-	 </td>
-  </tr>
-  <tr>      
-   <td colspan=2 bgcolor="<%=value_c%>" align="center"> 
-     <input type="submit" value="글수정" >  
-     <input type="reset" value="다시작성">
-     <input type="button" value="목록보기" 
-       onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
-   </td>
- </tr>
- </table>
+
+	<%@include file="nav.jsp"%><br>
+	<br>
+	<b>Update Form</b>
+	<br>
+	<form method="post" name="writeform"
+		action="updatePro.jsp?pageNum=<%=pageNum%>"
+		onsubmit="return writeSave(this)" enctype="multipart/form-data">
+		<body bgcolor="<%=bodyback_c%>">
+			<div class="col-lg-10"
+				style="width: 800px; position: relative; left: 25%">
+				<input type="text" class="form-control" maxlength="50"
+					name="subject" value="<%=article.getSubject()%>" style="border: none" value="글제목">
+			</div>
+			<hr width="50%" align="center"></hr>
+			<div class="col-lg-10"
+				style="width: 800px; position: relative; left: 25%">
+				<input type="text" class="form-control" maxlength="50" name="writer"
+					style="border: none" value="<%=article.getWriter()%>">
+			</div>
+			<table style="margin-left: auto; margin-right: auto;">
+				<tr>
+					<td align="center"><textarea name="content" rows="30"
+							cols="130"
+							style="ime-mode: active; border-left: 0; border-right: 0;"><%=article.getContent()%></textarea></td>
+				</tr>
+				<tr>
+					<td align="left"><input type="file" name="selectfile"></td>
+				</tr>
+			</table>
+			<div class="col-lg-10"
+				style="width: 200px; position: relative; left: 24%">
+				<input type="password" class="form-control" maxlength="12" name="passwd"
+					style="border: none" value="비밀번호">
+			</div>
+			<div class="return"
+				style="position: absolute; left: 22%; margin-top: 8;">
+				<input type="button"
+					class="btn btn-light btn btn-primary btn-sm mr-1" value="목록으로 가기"
+					OnClick="window.location='list.jsp'">
+			</div>
+			<div class="rBtn"
+				style="position: absolute; right: 22%; margin-top: 8;">
+				<input type="reset"
+					class="btn btn-light btn btn-primary btn-sm mr-1" value="다시작성">
+				<input type="submit"
+					class="btn btn-light btn btn-primary btn-sm mr-1" value="등록">
+			</div>
+		
 </form>
 <%
 }catch(Exception e){}%>      

@@ -28,7 +28,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-	padding: 0; /* ¹Ù´ÚÀ¸·Î µüºÙÀÓ */
+	padding: 0;
 	text-align: center;
 
 }
@@ -36,8 +36,8 @@ body {
 <body>
 <div class="footer">
 <div class="jumbotron text-center mt-5 mb-0"> 
-<h3 class="text-secondary">Life is Hard</h3>
-<p>Life is Hard is powered by <span class="text-primary">RiverMake</span> / Designed by <span class="text-primary">RiverMake</span></p>
+<h3 class="text-secondary">RiverMake</h3>
+<p>RiverMake is powered by <span class="text-primary">River</span> / Contact <span class="text-primary">kimss.river@gmail.com</span></p>
 </div>
 </div>
 </body>

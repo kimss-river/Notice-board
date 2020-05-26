@@ -6,7 +6,6 @@
 <head>
   <title>nav</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -18,7 +17,7 @@
     background-color:transparent;
 }
 .navbar {
-	background-color: #ffffff; /* opacity: 0.5; */
+	background-color: #000000; /* opacity: 0.5; */
 	height: 120px;
 	}
 .navbar-nav > li > a { padding: 24px 25px }
@@ -52,14 +51,13 @@
 <body style="height:1500px">
 <div class="navbar-inner">
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-<!--   <a class="navbar-brand" style="color:black" href="main.jsp">여기다가뭘할까 일단은 메인으로 갑니다</a> -->
  <div class="mIcon">
-   <a href="main.jsp"><img src="images/tt1.png" width="100" height="100"></a>
+   <a href="main.jsp"><img src="images/tt2.png" width="100" height="100"></a>
  </div>
   <div class="navleft">
   <ul class="navbar-nav">
     <li class="nav-item">
-    	<a class="nav-link" style="color:black" href="list.jsp">게시판</a>
+    	<a class="nav-link" style="color:white;" href="list.jsp">게시판</a>
     </li>
   </ul>
   </div>
@@ -69,7 +67,7 @@
  <div class="login">
   <ul class="navbar-nav">
   	<li class="nav-item">
-  		<a class="nav-link" style="color:black" href="login.jsp">로그인</a>
+  		<a class="nav-link" style="color:white" href="login.jsp">로그인</a>
   	</li>
   </ul>
   </div>
@@ -79,7 +77,7 @@
    <div class="login">
   <ul class="navbar-nav">
   	<li class="nav-item">
-  		<a class="nav-link" style="color:black" href="logoutPro.jsp">로그아웃</a>
+  		<a class="nav-link" style="color:white" href="logoutPro.jsp">로그아웃</a>
   	</li>
   </ul>
   </div>

@@ -49,67 +49,42 @@ function download(filename) {
 	   SimpleDateFormat sdf = 
 	        new SimpleDateFormat("yyyy-MM-dd HH:mm");
 %>
-
-<p>글내용 보기</p>
+	<%@include file="nav.jsp" %><br>
+	<br>
+	<b>Content</b>
 
 <form name="contentFrm">
-<table style="margin-left:auto; margin-right:auto;">  
-  <tr height="30">
-    <td align="center" width="125" bgcolor="<%=value_c%>">글번호</td>
-    <td align="center" width="125" align="center">
-	     <%=article.getNum()%></td>
-    <td align="center" width="125" bgcolor="<%=value_c%>">조회수</td>
-    <td align="center" width="125" align="center">
-	     <%=article.getReadcount()%></td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="<%=value_c%>">작성자</td>
-    <td align="center" width="125" align="center">
-	     <%=article.getWriter()%></td>
-    <td align="center" width="125" bgcolor="<%=value_c%>" >작성일</td>
-    <td align="center" width="125" align="center">
-	     <%= sdf.format(article.getReg_date())%></td>
-  </tr>
-  <tr height="30">
-    <td align="center" width="125" bgcolor="<%=value_c%>">글제목</td>
-    <td align="center" width="375" align="center" colspan="3">
-	     <%=article.getSubject()%></td>
-  </tr>
-  <tr>
-    <td align="center" width="125" bgcolor="<%=value_c%>">글내용</td>
-    <td align="left" width="380" colspan="3">
-           <pre><%=article.getContent()%></pre></td>
-  </tr>
-  <tr>
-    <td align="center" width="125" bgcolor="<%=value_c%>">파일다운로드</td>
-    <td align="left" width="125" colspan="3">
-           <%
-           String filename = article.getFileName();
-           if( filename !=null && !filename.equals("")) { %>
-	           <a href="javascript:download('<%=filename %>')">
-	           <%=filename %>
-	           </a>
-           <%} else { %>
-           파일이 없습니다.
-           <%} %>
-          </td>
-  </tr>
-  <tr height="45">      
-    <td colspan="4" bgcolor="<%=value_c%>" align="right" > 
-	  <input type="button" class="btn btn-light btn btn-primary btn-sm" value="글수정" 
-       onclick="document.location.href='updateForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-	  <input type="button" class="btn btn-light btn btn-primary btn-sm" value="글삭제" 
-       onclick="document.location.href='deleteForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="button" class="btn btn-light btn btn-primary btn-sm" value="답글쓰기" 
-       onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-       <input type="button" class="btn btn-light btn btn-primary btn-sm" value="글목록" 
-       onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
-    </td>
-  </tr>
-</table>    
+<div style="position:relative; right: 23.5%">
+<label><%=article.getSubject()%></label>
+</div>
+		<hr width="50%" align="center"></hr>
+		<div style="position:relative; right: 20%">
+		<label><b><%=article.getWriter()%></b>  <%= sdf.format(article.getReg_date())%></label></div>
+            <table width="50%" height="100" style="margin-left:auto; margin-right:auto;">
+      			<tr>
+      			<td align="left" name="content" rows="30"
+						cols="130" style="ime-mode: active; border:1px solid #a9a9a9; border-left: 0; border-right: 0;">
+           		<pre><%=article.getContent()%></pre></td>
+			<!-- 	<td align="center"><textarea name="content" rows="30"
+						cols="130" style="ime-mode: active; border-left: 0; border-right: 0;"></textarea></td> -->
+			</tr>
+			<tr>
+				<td align="left"><input type="file" name="selectfile"></td>
+			</tr>
+			</table>
+			<div class="return" style="position: absolute; left: 22%; margin-top: 8;">
+			<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="목록으로 가기"
+				OnClick="window.location='list.jsp'">
+			</div>
+			<div class="rBtn" style="position: absolute; right: 22%; margin-top: 8;">
+			<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="수정"
+			onclick="document.location.href='updateForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+			<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="삭제"
+			onclick="document.location.href='deleteForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+			<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="답글"
+			onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+			</div>
+ 
 <%
 // }catch(Exception e){} 
  %>

@@ -13,14 +13,31 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
-.test{
+body{
   position: absolute; 
   left: 50%; 
   transform: translateX(-50%);
 }
-
+a > img {
+	position: relative;
+	left: 70px;
+	padding: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
 .col-lg-10 {
 	width: 400px;
+	margin-bottom: 10px;
+}
+.btn-dark {
+	width: 200px;
+	height:50px;
+	position: relative;
+	left: 70px;
+	border-radius: 30px;
+}
+.form-check-input {
+	margin-bottom: 25px;
 }
 </style>
 <body>
@@ -46,29 +63,29 @@ else if (id!=null){
 	<%
 }
 }
-%>   
-<div class="container" >
-	<form class="form-horizontal" name="login" action="loginPro.do" method="post" >
-   <a href="main.jsp"><img src="images/tt1.png" width="180" height="180" align="center"></a>
-	<br>
-	<div class="test">
-		<label for="id" class=mb-2 mr-sm-2">아이디 </label>
-		<div class="col-lg-10">
-		 <input type="text" class="form-control" id="id" placeholder="아이디" name="id">
-		 </div>
-		<label for="pwd" class=mb-2 mr-sm-2">비밀번호 </label>
-		<div class="col-lg-10">
-		<input type="text" class="form-control" id="passwd" placeholder="패스워드" name="passwd">
-		</div>
-		<div class="form-check mb-2 mr-sm-2">
-		<label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="remember"> 아이디 저장
-      </label>
-      </div>
-      <button type="submit" class="btn btn-primary mb-2">로그인</button>
-	<a href="joinForm.jsp" class="btn btn-primary mb-2">회원가입</a>
-	</div>
-	</form>
+%>
+	<div class="container">
+		<form class="form-horizontal" name="login" action="loginPro.do"
+			method="post">
+			<a href="main.jsp"><img src="images/tt1.png" width="200"
+				height="122"></a> <br> <label for="id" class=mb-2mr-sm-2">아이디
+			</label>
+			<div class="col-lg-10">
+				<input type="text" class="form-control" id="id" name="id">
+			</div>
+			<label for="pwd" class=mb-2mr-sm-2">비밀번호 </label>
+			<div class="col-lg-10">
+				<input type="text" class="form-control" id="passwd" name="passwd">
+			</div>
+			<div class="form-check mb-2 mr-sm-2">
+				<label class="form-check-label"> <input type="checkbox"
+					class="form-check-input" name="remember"> 아이디 저장
+				</label>
+			</div>
+			<button type="submit" class="btn btn-dark mb-2">로그인</button>
+			<br> <input type="button" class="btn btn-dark" value="회원가입"
+				OnClick="window.location='joinForm.jsp'">
+		</form>
 	</div>
 </body>
 </html>

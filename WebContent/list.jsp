@@ -58,13 +58,9 @@
 	left: 76%;
 }
 </style>
-<%-- <body bgcolor="<%=bodyback_c%>"> --%>
 <body>
-<!-- 점보트론 추후수정 -->
-<!--  <div class="development container">
-  <div class="jumbotron mt-5">
-   <h1 class="display-3">Sofware Development</h1> -->
 	<%@include file="nav.jsp" %>
+<br>
 <br>
 <br>
 <p align="center">글목록(전체 글:<%=count%>)</p>
@@ -81,48 +77,44 @@
 </table>
 
 <% } else {%>
-<table class="table table-hover" style="margin-left:auto; margin-right:auto;">
-	<thead>
-<%--     <tr height="30" bgcolor="<%=value_c%>">  --%>
-    <tr height="30">
-      <th align="center"  width="50"  >번 호</th>
-      <th align="center"  width="250" >제   목</th>
-      <th align="center"  width="100" >작성자</th>
-      <th align="center"  width="150" >작성일</th> 
-      <th align="center"  width="50" >조 회</th> 
-    </tr>
-    </thead>
-<%  
-   for (int i = 0 ; i < articleList.size() ; i++) {
-       BoardDataBean article = articleList.get(i);
-%>
-   <tr height="30">
-    <td width="50" > <%=number--%></td>
-    <td width="250" align="left">
-<%
+		<table class="table table-hover"
+			style="margin-left: auto; margin-right: auto;">
+			<thead>
+				<tr height="30">
+					<th align="center" width="50">번 호</th>
+					<th align="center" width="250">제 목</th>
+					<th align="center" width="100">작성자</th>
+					<th align="center" width="150">작성일</th>
+					<th align="center" width="50">조 회</th>
+				</tr>
+			</thead>
+			<%
+				for (int i = 0; i < articleList.size(); i++) {
+						BoardDataBean article = articleList.get(i);
+			%>
+			<tr height="30">
+				<td width="50"><%=number--%></td>
+				<td width="250" align="left">
+					<%
 	int wid=0; 
 	if(article.getRe_level()>0){
 	   wid=5*(article.getRe_level());
-%>
-	  <img src="images/level.png" width="<%=wid%>" height="16">
-	  <img src="images/re.png">
-<%  }else{%>
-	  <img src="images/level.png" width="<%=wid%>" height="16">
-<%  }%>
-           
-      <a href="content.do?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
-           <%=article.getSubject()%> <%=article.getNum()%></a> 
-<% if(article.getReadcount()>=20){%>
-         <img src="images/hot.gif" border="0"  height="16"><%}%> </td>
-    <td width="100" align="left"> 
-       <a href="mailto:<%=article.getEmail()%>">
-                     <%=article.getWriter()%></a></td>
-    <td width="150"><%= sdf.format(article.getReg_date())%></td>
-    <td width="50"><%=article.getReadcount()%></td>
-  </tr>
-<%}%>
-</table>
-	<div class=writebtn>
+%> <img src="images/level.png" width="<%=wid%>" height="16"> <img
+					src="images/re.png"> <%  }else{%> <img src="images/level.png"
+					width="<%=wid%>" height="16"> <%  }%> <a
+					href="content.do?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
+						<%=article.getSubject()%></a> <% if(article.getReadcount()>=20){%> <img
+					src="images/hot.gif" border="0" height="16">
+					<%}%>
+				</td>
+				<td width="100" align="left"><a
+					href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a></td>
+				<td width="150"><%= sdf.format(article.getReg_date())%></td>
+				<td width="50"><%=article.getReadcount()%></td>
+			</tr>
+			<%}%>
+		</table>
+		<div class=writebtn>
 		<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="글쓰기"
 							OnClick="window.location='writeForm.jsp'">
 	</div>
@@ -144,7 +136,7 @@
         if (endPage > pageCount) endPage = pageCount;
         
         if (startPage > 10) { %>
-          <a href="list.jsp?pageNum=<%= startPage - 10 %>">[이전]</a>
+          <a href="list.jsp?pageNum=<%= startPage - 10 %>">이전</a>
 <%      }
         
         for (int i = startPage ; i <= endPage ; i++) {  %>
@@ -152,7 +144,7 @@
 <%      }
         
         if (endPage < pageCount) {  %>
-        <a href="list.jsp?pageNum=<%= startPage + 10 %>">[다음]</a>
+        <a href="list.jsp?pageNum=<%= startPage + 10 %>">다음</a>
 <%
         }
     }

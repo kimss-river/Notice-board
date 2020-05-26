@@ -36,60 +36,55 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body bgcolor="<%=bodyback_c%>">
-<p>글쓰기</p>
-
+	<%@include file="nav.jsp" %><br>
+	<br>
+	<b>Write Form</b>
 	<form method="post" action="writePro.do" enctype="multipart/form-data">
 		<input type="hidden" name="num" value="<%=num%>"> <input
 			type="hidden" name="ref" value="<%=ref%>"> <input
 			type="hidden" name="re_step" value="<%=re_step%>"> <input
 			type="hidden" name="re_level" value="<%=re_level%>">
-		<table style="margin-left:auto; margin-right:auto;">
-<%-- 			<tr>
-				<td align="right" colspan="2" bgcolor="<%=value_c%>"><a
-					href="list.jsp"> 글목록</a></td>
-			</tr> --%>
+			
+			<br>
+		<div class="col-lg-10"
+			style="width: 800px; position: relative; left: 25%">
+			<input type="text" class="form-control" maxlength="50" name="subject"
+				style="border: none" value="글제목">
+		</div>
+		<hr width="50%" align="center"></hr>
+		<div class="col-lg-10"
+			style="width: 800px; position: relative; left: 25%">
+			<input type="text" class="form-control" maxlength="50" name="writer"
+				style="border: none" value="이름">
+		</div>
+		<table style="margin-left: auto; margin-right: auto;">
 			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">이 름</td>
-				<td width="330" align="left"><input type="text" size="10"
-					maxlength="10" name="writer" style="ime-mode: active;"></td>
-				<!--active:한글-->
+				<td align="center"><textarea name="content" rows="30"
+						cols="130"
+						style="ime-mode: active; border-left: 0; border-right: 0;"></textarea></td>
 			</tr>
 			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">제 목</td>
-				<td width="330" align="left"><input type="text" size="40"
-					maxlength="50" name="subject" value="<%=strV%>"
-					style="ime-mode: active;"></td>
-			</tr>
-			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">Email</td>
-				<td width="330" align="left"><input type="text" size="40"
-					maxlength="30" name="email" style="ime-mode: inactive;"></td>
-				<!--inactive:영문-->
-			</tr>
-			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">내 용</td>
-				<td width="330" align="left"><textarea name="content" rows="13"
-						cols="40" style="ime-mode: active;"></textarea></td>
-			</tr>
-			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">파일선택</td>
-				<td width="330" align="left"><input type="file" name="selectfile"></td>
-			</tr>
-			<!-- sskim.a for file upload (추가했다는 의미) -->
-			<tr>
-				<td width="70" bgcolor="<%=value_c%>" align="center">비밀번호</td>
-				<td width="330" align="left"><input type="password" size="8"
-					maxlength="12" name="passwd" style="ime-mode: inactive;"></td>
-			</tr>
-			<tr>
-				<td height="50" colspan=2 bgcolor="<%=value_c%>" align="center">
-				<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="목록으로 가기"
-					OnClick="window.location='list.jsp'">
-				<input type="submit" class="btn btn-light btn btn-primary btn-sm mr-1" value="등록">
-				<input type="reset" class="btn btn-light btn btn-primary btn-sm mr-1" value="다시작성">
-				</td>
+				<td align="left"><input type="file" name="selectfile"></td>
 			</tr>
 		</table>
+		<div class="col-lg-10"
+			style="width: 200px; position: relative; left: 24%">
+			<input type="text" class="form-control" maxlength="12" name="passwd"
+				style="border: none" value="비밀번호">
+		</div>
+		<div class="return"
+			style="position: absolute; left: 22%; margin-top: 8;">
+			<input type="button"
+				class="btn btn-light btn btn-primary btn-sm mr-1" value="목록으로 가기"
+				OnClick="window.location='list.jsp'">
+		</div>
+		<div class="rBtn"
+			style="position: absolute; right: 22%; margin-top: 8;">
+			<input type="reset" class="btn btn-light btn btn-primary btn-sm mr-1"
+				value="다시작성"> <input type="submit"
+				class="btn btn-light btn btn-primary btn-sm mr-1" value="등록">
+		</div>
+	
 	</form>
 </body>
 </html>
