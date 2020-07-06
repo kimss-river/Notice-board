@@ -59,7 +59,6 @@ public class BoardServlet extends HttpServlet {
 			viewPage="writeForm.jsp";
 		}
 		if(action.equals("writePro.do")) {
-			// ejkim.a for file upload // ejkim.test
 			String realFolder = "";//웹 어플리케이션상의 절대 경로
 			String filename = "";
 					
@@ -119,7 +118,6 @@ public class BoardServlet extends HttpServlet {
 		if (action.equals("updatePro.do")) {
 			int check=0;
 			String pageNum="";
-			// ejkim.a for file upload
 			String realFolder = "";// 웹 어플리케이션상의 절대 경로
 			String filename = "";
 			String saveFolder = "/fileSave";
@@ -142,12 +140,6 @@ public class BoardServlet extends HttpServlet {
 				art.setEmail(multi.getParameter("email"));
 				art.setContent(multi.getParameter("content"));
 				art.setPasswd(multi.getParameter("passwd"));
-//				art.setRef(Integer.parseInt(multi.getParameter("ref")));
-//				art.setRe_step(Integer.parseInt(multi.getParameter("re_step")));
-//				art.setRe_level(Integer.parseInt(multi.getParameter("re_level")));
-//				art.setReg_date(new Timestamp(System.currentTimeMillis()));
-//				art.setIp(request.getRemoteAddr());
-				// ejkim.a for file upload
 				art.setFileName(filename);
 				pageNum=multi.getParameter("pageNum");
 				BoardDBBean dbPro = BoardDBBean.getInstance();
@@ -212,7 +204,7 @@ public class BoardServlet extends HttpServlet {
 					//id, passwd 동일, 로그인 성공
 					request.setAttribute("checkId", 0);
 					request.getSession().setAttribute("id", id);
-					viewPage = "list.jsp";
+					viewPage = "loginPro.jsp";
 				} else {
 					//passwd가 틀림
 					request.setAttribute("checkId", 1);

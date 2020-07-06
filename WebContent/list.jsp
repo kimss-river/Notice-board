@@ -65,6 +65,24 @@
 <br>
 <p align="center">글목록(전체 글:<%=count%>)</p>
 
+
+<div class='aside_menu' style="position: relative;">
+  <form name='frm' method='GET' action='./list.jsp'>
+    <aside style='float: right;'>
+      <select name='col'> <!-- 검색 컬럼 -->
+        <option value='none'>전체 목록</option>
+        <option value='writer'>작성자</option>
+        <option value='title'>제목</option>
+        <option value='content'>내용</option>
+        <option value='titleContent'>제목+내용</option>
+      </select>
+      <input type='text' name='word' value=''>
+      <button type='submit' class="btn btn-light btn-sm mr-1">검색</button>
+    </aside> 
+  </form>
+  <div class='menu_line' style='clear: both;'></div>
+</DIV>
+
 <div class="container">
 
 <% if (count == 0) { %>
@@ -77,8 +95,7 @@
 </table>
 
 <% } else {%>
-		<table class="table table-hover"
-			style="margin-left: auto; margin-right: auto;">
+		<table class="table table-hover" style="margin-left: auto; margin-right: auto;">
 			<thead>
 				<tr height="30">
 					<th align="center" width="50">번 호</th>
@@ -115,8 +132,7 @@
 			<%}%>
 		</table>
 		<div class=writebtn>
-		<input type="button" class="btn btn-light btn btn-primary btn-sm mr-1" value="글쓰기"
-							OnClick="window.location='writeForm.jsp'">
+		<input type="button" class="btn btn-light btn-sm mr-1" value="글쓰기" OnClick="window.location='writeForm.jsp'">
 	</div>
 </div>
 <%}%>
